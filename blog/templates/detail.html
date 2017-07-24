@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Blogger</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+
+  <style>
+  .single {
+
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.4)  ;
+  padding: 2em 2.5em 2.5em 2.5em;
+  margin: 15px 15px 15px 0px ;
+  }
+  .single:hover {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.5);
+
+  }
+  a{
+    color: inherit;
+  }
+  a:hover{
+    color: inherit;
+    text-decoration: none;
+  }
+  /*body{
+    background-color: #69f0ae ;
+  }*/
+  body {
+
+    background-image: url('/media/images/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+    .content {
+      text-align: justify;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="nav-wrapper b">
+  <nav class="nav navbar navbar-inverse navbar-fixed-top" style="background-color:rgba(50, 180, 190, 0.8);">
+
+  <div class="container-fluid">
+    <a href="/" style="font-size:30px;display:inline-block">Blogger</a>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li style="display:inline-block; padding-right:1em; padding-top:2.5%;"><h4 > <a href='/admin'>Login</a><h4></li>
+        <li style="padding-top:2.5%;">
+          <form method="post" action="/search/" >{% csrf_token %}
+            <input  id="find-sel" class="input-sm" style="display:inline-block;" type="text" name="keyword" placeholder="Search Here">
+            <button type="submit" style="display:inline-block; margin-right:1em">Search</button>
+
+          </form>
+        </li>
+
+
+      </ul>
+
+  </div>
+</nav>
+</div>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+
+
+  <div class="col-lg-2"></div>
+  <div class="container col-lg-8 " style="padding-top:4em" >
+    <center class="next"> {% if previous != 0%} <a href='/{{previous}}' style="padding-right:80%; font-size:18px"><strong style="-webkit-text-stroke-color:white; -webkit-text-stroke-width:0.25px">Previous</strong></a> {% endif %} <a href='/{{next}}' style="padding-bottom:2.5%;font-size:18px"><strong strong style="-webkit-text-stroke-color:white; -webkit-text-stroke-width:0.25px">Next</strong></a> </center>
+
+
+    <div class="single" style="">
+      {% if posts != 'wut' %}
+      <h2>{{posts.title}}</h2>
+      <p>Posted on {{posts.timestamp}} by {{posts.author}}</p>
+      {% if posts.image %}
+      <center class="well"><img class="img-responsive" src="/media/{{posts.image}}" /></center>
+      {% endif %}
+      <p class='content'>{{posts.bodytext| linebreaks}}</p>
+      {% else%}
+      <center><h3>Nothing To Show</h3> <br> <a  href='/' ><button>Go Back</button> </a></center>
+
+      <style media="screen">
+        .next{ display: none}
+      </style>
+      {%endif%}
+    </div>
+    <center class="next"> {% if previous != 0%} <a href='/{{previous}}' style="padding-right:80%; font-size:18px"><strong style="-webkit-text-stroke-color:white; -webkit-text-stroke-width:0.25px">Previous</strong></a> {% endif %} <a href='/{{next}}' style="padding-bottom:2.5%;font-size:18px"><strong strong style="-webkit-text-stroke-color:white; -webkit-text-stroke-width:0.25px">Next</strong></a> </center>
+
+
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
