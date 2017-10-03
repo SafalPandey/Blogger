@@ -22,7 +22,8 @@ urlpatterns = [
     url(r'^$', views.home, name = 'home'),
     url(r'^page/(?P<page>\d+)$', views.pages, name = 'pages'),
     url(r'^(?P<id>\d+)/$', views.detail, name = 'detail'),
-    url(r'^search/', views.search, name = 'search'),
+    url(r'^(?P<id>\d+)/(?P<page_direction>previous|next)/$', views.detail, name = 'detail'),
+    url(r'^search/(?P<keyword>\w+)?', views.search, name = 'search'),
     url(r'^admin/', admin.site.urls),
 ]
 if settings.DEBUG:
