@@ -20,6 +20,9 @@
     margin: 15px 15px 15px 0px;
     overflow:hidden
   }
+  .btn-success{
+    font-size:28px;
+  }
   @media only screen and  (min-width: 1080px) {
     .single {
       font-size: 1em;
@@ -31,6 +34,10 @@
     .single:hover {
     box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.5);
 
+    }
+    .btn-success{
+      font-size:15px;
+      
     }
 
 
@@ -91,7 +98,8 @@
 
   <div class="col-lg-2 col-xs-0"></div>
   <div class="container col-lg-8 col-xs-12" style="padding-top:4em" >
-    <center class="next"> {% if previous != 0%} <a href='previous' style="padding-right:80%; font-size:18px"><strong style="-webkit-text-stroke-color:white; -webkit-text-stroke-width:0.25px">Previous</strong></a> {% endif %} <a href='next' style="padding-bottom:2.5%;font-size:18px"><strong strong style="-webkit-text-stroke-color:white; -webkit-text-stroke-width:0.25px">Next</strong></a> </center>
+    <center class="next"> {% if previous != 0%} <a href='previous' style="padding-right:62%; font-size:18px"><strong class="btn btn-success" style="width:6em">Previous</strong></a> {% endif %} <a href='next' style="padding-bottom:2.5%;font-size:18px"><strong class="btn btn-success" style="width:6em">Next</strong></a> </center>
+
 
 
     <div class="single" style="">
@@ -110,7 +118,7 @@
       </style>
       {%endif%}
     </div>
-    <center class="next"> {% if previous != 0%} <a href='previous' style="padding-right:80%; font-size:18px"><strong style="-webkit-text-stroke-color:white; -webkit-text-stroke-width:0.25px">Previous</strong></a> {% endif %} <a href='next' style="padding-bottom:2.5%;font-size:18px"><strong strong style="-webkit-text-stroke-color:white; -webkit-text-stroke-width:0.25px">Next</strong></a> </center>
+    <center class="next"> {% if previous != 0%} <a href='previous' style="padding-right:62%; font-size:18px"><strong class="btn btn-success" style="width:6em">Previous</strong></a> {% endif %} <a href='next' style="padding-bottom:2.5%;font-size:18px"><strong class="btn btn-success" style="width:6em">Next</strong></a> </center>
 
 
 

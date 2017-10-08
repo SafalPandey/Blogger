@@ -22,6 +22,9 @@
       text-align: justify;
 
     }
+    .btn-success{
+      font-size:28px;
+    }
     @media only screen and  (min-width: 1080px) {
       .single {
         font-size: 1em;
@@ -34,6 +37,9 @@
       .single:hover {
       box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.5);
 
+      }
+      .btn-success{
+        font-size:15px;
       }
 
 
@@ -58,9 +64,15 @@
       background-size: cover;
       background-attachment: fixed;
       background-repeat:no-repeat;
-      min-height:100vh;
+      min-height:120vh;
 
     }
+
+    .post-by{
+      font-size: 0.8em;
+}
+
+
 
     .content {
 
@@ -112,7 +124,7 @@
         </td>
         {% endif %}
         <td>
-          <p><h6 style="color:#0000d1">Posted on {{post.timestamp}} by {{post.author}}</h6></p>
+          <p><div class="post-by" style="color:#0000d1">Posted on {{post.timestamp}} by {{post.author}}</div></p>
 
           <p class='content'>{{post.bodytext|linebreaks|slice:":250"}} {% if post.bodytext|slice:":250" != post.bodytext %} <strong style="color:red">...Read More...</strong> {% endif%}</p>
 
@@ -133,7 +145,7 @@
 
     {% if search != True %}
 
-    <center class="next"> {% if previous != 0%} <a href='/page/{{previous}}' style="padding-right:80%; font-size:18px"><strong style="-webkit-text-stroke-color:white; -webkit-text-stroke-width:0.25px">Previous</strong></a> {% endif %} <a href='/page/{{next}}' style="padding-bottom:2.5%;font-size:18px"><strong strong style="-webkit-text-stroke-color:white; -webkit-text-stroke-width:0.25px">Next</strong></a> </center>
+    <center class="next"> {% if previous != 0%} <a href='/page/{{previous}}' style="padding-right:62%;"><strong class="btn btn-success" style="width:6em;">Previous</strong></a> {% endif %} <a href='/page/{{next}}' style="padding-bottom:2.5%;"><strong class="btn btn-success" style="width:6em;">Next</strong></a> </center>
     {% endif %}
 
       </div>
