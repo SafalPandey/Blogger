@@ -14,7 +14,7 @@
 
   .single {
     border-radius: 5px;
-    font-size: 1.5em;
+    font-size: 2.5em;
   background-color: rgba(255, 255, 255, 0.5)  ;
     padding: 1.5em 2.5em 2.5em 2.5em;
     margin: 15px 15px 15px 0px;
@@ -96,8 +96,8 @@
 
     <div class="single" style="">
       {% if posts != 'wut' %}
-      <h2>{{posts.title}}</h2>
-      <p>Posted on {{posts.timestamp}} by {{posts.author}}</p>
+      <h1>{{posts.title}}</h1>
+      <h3>Posted on {{posts.timestamp}} by {{posts.author}}</h3>
       {% if posts.image %}
       <center class="well"><img class="img-responsive" src="/media/{{posts.image}}" /></center>
       {% endif %}
